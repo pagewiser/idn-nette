@@ -16,18 +16,17 @@
 	"require": {
 		"php": ">=5.3.0",
 		"nette/nette": ">=2.2.0",
-		"pagewiser/idn-client": "0.1.x-dev"
+		"pagewiser/idn-client": "0.1"
 	},
 	"replace": {
 		"marten/nette-idn": "*"
 	},
-	"version": "0.1",
 	"autoload": {
 		"psr-4": { "Pagewiser\\Idn\\Nette\\": "src/" }
 	},
 	"extra": {
 		"branch-alias": {
-			"dev-master": "0.1-dev"
+			"dev-master": "0.2-dev"
 		}
 	}
 }
