@@ -1,8 +1,8 @@
 <?php
 
-namespace Marten\NetteIdn;
+namespace Pagewiser\Idn\Nette;
 
-class Api extends \Marten\Idn\Api
+class Api extends \Pagewiser\Idn\Client\Api
 {
 
 

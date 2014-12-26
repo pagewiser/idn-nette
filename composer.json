@@ -1,19 +1,25 @@
 {
-	"name": "marten/nette-idn",
+	"name": "pagewiser/idn-nette",
 	"type": "library",
-	"description": "Nette helpers and extension for IDN server",
+	"description": "Nette helpers and macros for IDN server",
 	"keywords": ["images", "cdn"],
 	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
 	"authors": [
 		{
+			"name": "PageWiser",
+			"homepage": "https://www.pagewiser.com"
+		}, {
 			"name": "Martin Malek",
 			"homepage": "http://www.marten-online.com"
 		}
 	],
 	"require": {
-		"php": ">=5.0.0",
-		"nette/nette": ">=2.0.0",
-		"marten/idn": "0.1.*@dev"
+		"php": ">=5.3.0",
+		"nette/nette": ">=2.2.0",
+		"pagewiser/idn": "0.1.*@dev"
+	},
+	"replace": {
+		"marten/nette-idn": "*"
 	},
 	"version": "0.1",
 	"extra": {

@@ -1,18 +1,18 @@
 <?php
 
-namespace Marten\NetteIdn;
+namespace Pagewiser\Idn\Nette;
 
-use Nette\Latte\MacroNode;
-use Nette\Latte\PhpWriter;
+use Latte\MacroNode;
+use Latte\PhpWriter;
+use Latte\Compiler;
 
 
-class IdnMacros extends \Nette\Latte\Macros\MacroSet
+class IdnMacros extends \Latte\Macros\MacroSet
 {
 
-	public static function install(\Nette\Latte\Compiler $compiler)
+	public static function install(Compiler $compiler)
 	{
 		$me = new static($compiler);
-		//$set->addMacro('id', NULL, NULL, array($set, 'macroId'));
 
 		$me->addMacro('idn', array($me, 'imageLink'));
 	}
