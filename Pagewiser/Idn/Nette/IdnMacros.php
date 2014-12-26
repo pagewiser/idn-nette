@@ -10,6 +10,7 @@ use Latte\Compiler;
 class IdnMacros extends \Latte\Macros\MacroSet
 {
 
+
 	public static function install(Compiler $compiler)
 	{
 		$me = new static($compiler);
@@ -35,5 +36,6 @@ class IdnMacros extends \Latte\Macros\MacroSet
 		return $writer->write('echo %escape(%modify(' . ($node->name === 'plink' ? '$_presenter' : '$_control') . '->link(%node.word, %node.array?)))');
 		return $writer->write('if ($_l->tmp = array_filter(%node.array)) echo \' id="\' . %escape(implode(" ", array_unique($_l->tmp))) . \'"\'');
 	}
+
 
 }
