@@ -31,7 +31,7 @@ class IdnMacros extends \Latte\Macros\MacroSet
 	 */
 	public function imageLink(MacroNode $node, PhpWriter $writer)
 	{
-		return $writer->write('echo %escape(%modify($_presenter->getContext()->getService(\'idn\')->latteImage(%node.word, %node.array?)))');
+		return $writer->write('echo %escape(%modify($_presenter->getContext()->getByType(\'Pagewiser\Idn\Nette\Api\')->latteImage(%node.word, %node.array?)))');
 
 		return $writer->write('echo %escape(%modify(' . ($node->name === 'plink' ? '$_presenter' : '$_control') . '->link(%node.word, %node.array?)))');
 		return $writer->write('if ($_l->tmp = array_filter(%node.array)) echo \' id="\' . %escape(implode(" ", array_unique($_l->tmp))) . \'"\'');
