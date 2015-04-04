@@ -1,0 +1,11 @@
+# Requires Nette Framework 2.3
+
+extensions:
+	idn: Pagewiser\Idn\Nette\Bridges\Nette\Nette23Extension
+
+idn:
+	apiHost: 'http://api.idn.martin-malek.pwr/'
+	apiKey: 'idnApiKey'
+	apiSecret: 'idnApiSecret'
+	imageHost: '//storage.idn.martin-malek.pwr/'
+	profiler: TRUE
