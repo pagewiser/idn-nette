@@ -10,6 +10,7 @@ class Nette23Extension extends Nette\DI\CompilerExtension
 	public $databaseDefaults = array(
 		'apiHost' => 'http://api.idn.pwr/',
 		'imageHost' => '//storage.idn.pwr/',
+		'lazy' => TRUE,
 		'profiler' => FALSE,
 	);
 
@@ -30,7 +31,14 @@ class Nette23Extension extends Nette\DI\CompilerExtension
 		$connection = $container->addDefinition($this->prefix('connection'))
 			->setClass('Pagewiser\Idn\Nette\Api', array($config['apiKey'], $config['apiSecret']))
 			->addSetup('setApiUrl', array($config['apiHost']))
-			->addSetup('setImageUrl', array($config['imageHost']));
+			->addSetup('setImageUrl', array($config['imageHost']))
+			->addSetup('loginClient', array($config['client']));
+
+		if (!empty($config['user']) && !empty($config['password']))
+		{
+			$connection->addSetup('loginUser', array($config['user'], $config['password'], (bool) $config['lazy']));
+		}
+
 
 		if ($useProfiler) {
 			$panel = $container->addDefinition($this->prefix('panel'))
