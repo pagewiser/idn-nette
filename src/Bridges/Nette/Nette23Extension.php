@@ -33,6 +33,11 @@ class Nette23Extension extends Nette\DI\CompilerExtension
 			->addSetup('setApiUrl', array($config['apiHost']))
 			->addSetup('setImageUrl', array($config['imageHost']));
 
+		if (!empty($config['client']))
+		{
+			$connection->addSetup('loginClient', array($config['client']));
+		}
+
 		if ($useProfiler) {
 			$panel = $container->addDefinition($this->prefix('panel'))
 				->setClass('Pagewiser\Idn\Nette\Bridges\Tracy\Panel');
