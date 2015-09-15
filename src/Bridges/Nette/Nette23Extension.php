@@ -12,6 +12,7 @@ class Nette23Extension extends Nette\DI\CompilerExtension
 		'imageHost' => '//storage.idn.pwr/',
 		'lazy' => TRUE,
 		'profiler' => FALSE,
+		'dirAliases' => array(),
 	);
 
 
@@ -36,6 +37,11 @@ class Nette23Extension extends Nette\DI\CompilerExtension
 		if (!empty($config['client']))
 		{
 			$connection->addSetup('loginClient', array($config['client']));
+		}
+
+		if (!empty($config['dirAliases']))
+		{
+			$connection->addSetup('setDirAliases', array($config['dirAliases']));
 		}
 
 		if ($useProfiler) {

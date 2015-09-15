@@ -24,6 +24,9 @@ To register this extension into the Nette, add the latte macro extension to your
         lazy: TRUE
         client: 'client-name'
         profiler: TRUE
+        dirAliases:
+            profilePhoto: 'user/photo'
+
 
 **Nette 2.2.x**
 
